@@ -11,6 +11,9 @@
 		95586D4F264A78990066F094 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95586D4E264A78990066F094 /* ContentView.swift */; };
 		95586D51264A789B0066F094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95586D50264A789B0066F094 /* Assets.xcassets */; };
 		95586D54264A789B0066F094 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95586D53264A789B0066F094 /* Preview Assets.xcassets */; };
+		95586D60264A78FF0066F094 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95586D5F264A78FF0066F094 /* Model.swift */; };
+		95586D64264A79A50066F094 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95586D63264A79A50066F094 /* ViewModel.swift */; };
+		95586D69264A7C490066F094 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95586D68264A7C490066F094 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		95586D50264A789B0066F094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95586D53264A789B0066F094 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		95586D55264A789B0066F094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95586D5F264A78FF0066F094 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		95586D63264A79A50066F094 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		95586D68264A7C490066F094 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +42,7 @@
 		95586D40264A78990066F094 = {
 			isa = PBXGroup;
 			children = (
+				95586D4C264A78990066F094 /* Stock_ChallengeApp.swift */,
 				95586D4B264A78990066F094 /* Stock Challenge */,
 				95586D4A264A78990066F094 /* Products */,
 			);
@@ -52,8 +59,10 @@
 		95586D4B264A78990066F094 /* Stock Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				95586D4C264A78990066F094 /* Stock_ChallengeApp.swift */,
-				95586D4E264A78990066F094 /* ContentView.swift */,
+				95586D5C264A78AE0066F094 /* View */,
+				95586D5D264A78B60066F094 /* ViewModel */,
+				95586D5E264A78D90066F094 /* Model */,
+				95586D67264A7C370066F094 /* Additionals */,
 				95586D50264A789B0066F094 /* Assets.xcassets */,
 				95586D55264A789B0066F094 /* Info.plist */,
 				95586D52264A789B0066F094 /* Preview Content */,
@@ -67,6 +76,38 @@
 				95586D53264A789B0066F094 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		95586D5C264A78AE0066F094 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95586D4E264A78990066F094 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95586D5D264A78B60066F094 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				95586D63264A79A50066F094 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		95586D5E264A78D90066F094 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95586D5F264A78FF0066F094 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95586D67264A7C370066F094 /* Additionals */ = {
+			isa = PBXGroup;
+			children = (
+				95586D68264A7C490066F094 /* Constant.swift */,
+			);
+			path = Additionals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95586D60264A78FF0066F094 /* Model.swift in Sources */,
 				95586D4F264A78990066F094 /* ContentView.swift in Sources */,
+				95586D69264A7C490066F094 /* Constant.swift in Sources */,
+				95586D64264A79A50066F094 /* ViewModel.swift in Sources */,
 				95586D4D264A78990066F094 /* Stock_ChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
