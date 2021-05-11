@@ -11,7 +11,7 @@ import SwiftUI
 struct Stock_ChallengeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchView()
                 .environmentObject(ContentModel())
         }
     }

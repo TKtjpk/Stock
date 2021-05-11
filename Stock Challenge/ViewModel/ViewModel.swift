@@ -9,13 +9,12 @@ import Foundation
 
 class ContentModel: ObservableObject {
     
-    var input = ["AAPL", "GOOG"]
+    var search: String?
     
-    @Published var stock = Lookup()
+    @Published var company = Lookup()
     
     init() {
         
-        searchData()
     }
     
     func  searchData() {
@@ -24,7 +23,7 @@ class ContentModel: ObservableObject {
         
         
         urlComponents?.queryItems = [
-            URLQueryItem(name: "q", value: "apple"),
+            URLQueryItem(name: "q", value: search),
             URLQueryItem(name: "token", value: "\(Constant.apiKey)")
         ]
         
@@ -49,7 +48,7 @@ class ContentModel: ObservableObject {
                         let result = try decoder.decode(Lookup.self, from: data!)
                         
                         DispatchQueue.main.async {
-                            self.stock = result
+                            self.company = result
                         }
                         print(result)
                         
