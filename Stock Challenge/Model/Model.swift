@@ -20,3 +20,13 @@ struct Companies: Decodable {
     var symbol: String?
     var type: String?
 }
+
+struct Data: Decodable {
+    
+    var c: Double?
+    var h: Double?
+    var l: Double?
+    var o: Double?
+    var pc: Double?
+    var t: Int?
+}

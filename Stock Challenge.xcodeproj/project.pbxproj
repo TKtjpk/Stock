@@ -15,6 +15,7 @@
 		95586D64264A79A50066F094 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95586D63264A79A50066F094 /* ViewModel.swift */; };
 		95586D69264A7C490066F094 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95586D68264A7C490066F094 /* Constant.swift */; };
 		95586D6D264A9AEE0066F094 /* SearchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95586D6C264A9AEE0066F094 /* SearchRowView.swift */; };
+		95586D70264ABD1F0066F094 /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95586D6F264ABD1F0066F094 /* StockListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		95586D63264A79A50066F094 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		95586D68264A7C490066F094 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		95586D6C264A9AEE0066F094 /* SearchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRowView.swift; sourceTree = "<group>"; };
+		95586D6F264ABD1F0066F094 /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				95586D4E264A78990066F094 /* SearchView.swift */,
 				95586D6C264A9AEE0066F094 /* SearchRowView.swift */,
+				95586D6F264ABD1F0066F094 /* StockListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				95586D60264A78FF0066F094 /* Model.swift in Sources */,
 				95586D4F264A78990066F094 /* SearchView.swift in Sources */,
 				95586D69264A7C490066F094 /* Constant.swift in Sources */,
+				95586D70264ABD1F0066F094 /* StockListView.swift in Sources */,
 				95586D64264A79A50066F094 /* ViewModel.swift in Sources */,
 				95586D4D264A78990066F094 /* Stock_ChallengeApp.swift in Sources */,
 				95586D6D264A9AEE0066F094 /* SearchRowView.swift in Sources */,

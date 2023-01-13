@@ -13,6 +13,7 @@ struct SearchView: View {
     
     @State var search: String = ""
     @State var isEditing = false
+    @State var edit = false
     
     var body: some View {
         
@@ -21,9 +22,83 @@ struct SearchView: View {
             ZStack {
                 
                 VStack {
+                    List {
+                        if list.value.count > 0 {
+                            ForEach (0..<list.value.count, id: \.self) { item in
+                                HStack {
+                                    Text(list.listDisplay[item])
+                                    VStack (alignment: .leading){
+                                        Text("min \(list.listDisplay[item])")
+                                            .font(.caption2)
+                                        Text("max \(list.listDisplay[item])")
+                                            .font(.caption2)
+                                    }
+                                    Spacer()
+                                    edit ?  Button(action: {
+                                        list.removeFromList(item: item)
+                                        edit = false
+                                    }, label: {
+                                        Text("Delete")
+                                    })
+                                    .disabled(false) : Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                                        Text("\(list.value[item]) $")
+                                    })
+                                    .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                                }
+                            }
+                        }
+                    }
+                    .toolbar {
+                        ToolbarItem(placement: .bottomBar)  {
+                            Button("Edit") {
+                                edit = true
+                            }
+                            .disabled(edit ? true : false)
+                        }
+                        ToolbarItem(placement: .bottomBar)  {
+                            Spacer()
+                        }
+                        ToolbarItem(placement: .bottomBar ) {
+                            Button("Reload") {
+                                list.reload()
+                            }
+                        }
+                        ToolbarItem(placement: .bottomBar)  {
+                            Spacer()
+                        }
+                        ToolbarItem(placement: .bottomBar) {
+                            Button("Close") {
+                                edit = false
+                            }
+                            .disabled(edit ? false : true)
+                        }
+                    }
+                    .disabled(list.value.count > 0 ? false : true)
+                    .listRowBackground(LinearGradient(gradient: Gradient(colors: [Color.white, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                    .navigationTitle(Text("\(list.listDisplay.count) \(list.listDisplay.count > 1 || list.listDisplay.count == 0 ? "elements" : "element") listed"))
+                    
+                    ScrollView (showsIndicators: false ) {
+                        
+                        LazyVStack {
+                            
+                            if list.search != nil {
+                                ForEach (0..<list.company.result!.count, id: \.self) { item in
+                                    let string = list.company.result![item].symbol
+                                    if (!(string!.contains("."))) {
+                                        
+                                        Button(
+                                            action: {
+                                                list.getData(stock: list.company.result![item].symbol!, i: item)
+                                            }, label: {
+                                                SearchRowView(name: list.company.result![item].description!, displaySymbol: list.company.result![item].displaySymbol!, type: list.company.result![item].type!, symbol: list.company.result![item].symbol!)
+                                            })
+                                    }
+                                }
+                            }
+                        }
+                    }
                     
                     ZStack{
-                        
                         RoundedRectangle(cornerRadius: 10, style: .circular)
                             .foregroundColor(.white)
                             .shadow(radius: 10)
@@ -41,30 +116,28 @@ struct SearchView: View {
                         .padding()
                         .font(.title)
                     }
-                    
-                    ScrollView (showsIndicators: false ) {
-                        
-                        LazyVStack {
-                            
-                            if list.search != nil {
-                                ForEach (0..<list.company.result!.count, id: \.self) { item in
-                                    SearchRowView(name: list.company.result![item].description!, symbol: list.company.result![item].displaySymbol!)
-                                    
-                                    
-                                }
-                            }
-                        }
-                        
-                    }
                 }
+                .accentColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                 
             }
-            .navigationBarTitle(list.search != nil  ? "\(list.company.count! > 0 ? String(list.company.count!) : "") \(list.company.count! < 1 ? "no results" :  list.company.count! > 1 ? "companies found" : "company found")" : "", displayMode: .automatic)
-            
-            
         }
-        
         .accentColor(.gray)
         .padding(.horizontal)
     }
+}
+
+struct CheckView: View {
+   @State var isChecked:Bool = false
+   var title:String
+   func toggle(){isChecked = !isChecked}
+   var body: some View {
+       Button(action: toggle){
+           HStack{
+               Image(systemName: isChecked ? "checkmark.square": "square")
+               Text(title)
+           }
+
+       }
+
+   }
 }

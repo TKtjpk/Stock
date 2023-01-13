@@ -10,23 +10,36 @@ import SwiftUI
 struct SearchRowView: View {
     
     var name = "Example"
+    var displaySymbol = "EXM"
+    var type = "Common Stock"
     var symbol = "EXM"
     
     var body: some View {
         ZStack {
             Rectangle()
                 .foregroundColor(.gray)
-                .frame(height: 40)
+                .frame(height: 50)
                 .cornerRadius(10)
-            HStack {
-                Text(name)
-                    .foregroundColor(.white)
-                Spacer()
-                Text(symbol)
-                    .foregroundColor(.white)
+                .shadow(radius: 5)
+            VStack {
+                HStack {
+                    Text(name)
+                        .foregroundColor(.white)
+                        .lineLimit(1)
+                    Spacer()
+                    Text(symbol)
+                        .foregroundColor(.white)
+                }
+                
+                HStack {
+                    Text(type)
+                        .foregroundColor(.white)
+                        .font(.footnote)
+                    Spacer()
+                    
+                }
             }
             .padding(.horizontal)
-            
         }
     }
 }
@@ -36,3 +49,5 @@ struct SearchRowView_Previews: PreviewProvider {
         SearchRowView()
     }
 }
+
+
